@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register Form</title>
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="accHeader">
+        <nav>
+            <a href="#" class="logo">
+                <img src="images/logoImg.png" alt="">
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="category.html">Alle categorieën</a></li>
+                <li><a href="decoratie.html">Decoratie</a></li>
+                <li><a href="meubels.html">Meubels</a></li>
+                <li><a href="dieren.html">Dieren</a></li>
+                <li class="account liImg"><a href="account.html">Account</a></li>
+                <li class="liImg"><a href="favorites.html"><img src="images/heart_icon.png" alt=""></a></li>
+            </ul>
+
+            <div class="nav_icons_here">
+                <a href="favorites.html"><img src="images/heart_icon.png" alt=""></a>
+                <li class="account"><a href="account.html">Account</a></li>
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+        </nav>
+        <main class="mainForm">
+            <img src="images/mainImg.png" alt="">
+
+            <div class="container_form">
+                <div class="form-container">
+                    <div class="form-btns">
+                        <button id="login-btn">Login</button>
+                        <button id="register-btn">Register</button>
+                    </div>
+
+                    <div class="form-wrapper">
+                        <form id="login-form" class="form">
+                            <h2>Login</h2>
+                            <input type="text" id="loginName" placeholder="Username" required>
+                            <input type="password" id="loginPassword" placeholder="Password" required>
+                            <button type="submit">Login</button>
+                            <p id="loginMessage" style="text-align: center;"></p>
+                        </form>
+                        <form id="register-form" class="form">
+                            <h2>Register</h2>
+                            <input type="text" id="name" placeholder="Username" required>
+                            <input type="email" id="email" placeholder="Email" required>
+                            <input type="password" id="password" placeholder="Password" required>
+                            <button type="submit">Register</button>
+                            <p id="message" style="text-align: center;"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </header>
+
+    <footer>
+        <div class="footer_div">
+            <div class="left_footer">
+                <h3>Download our App</h3>
+                <p>download app for android and ios mobile phone</p>
+                <div>
+                    <img src="images/play-store.png" alt="">
+                    <img src="images/app-store.png" alt="">
+                </div>
+            </div>
+
+            <div class="logo_footer">
+                <img src="images/logo.png" alt="">
+                <p>Our Purpose Is To Sustainably Make the pleasure and <br> benefits of upcycling accessible to the many.</p>
+            </div>
+
+            <div class="links_footer">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join affiliate</li>
+                </ul>
+            </div>
+            <div class="links_footer">
+                <h3>Follow us</h3>
+                <ul>
+                    <li>FaceBook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div class="end">
+        <div class="end_div">
+            <p>Copyright 2023 - DIY Fraai industries</p>
+        </div>
+    </div>
+
+    <script src="app.js" defer></script>
+    <script src="somejs.js" defer ></script>
+</body>
+</html>
