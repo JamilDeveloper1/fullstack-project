@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (response.ok) {
                 messageElem.textContent = 'Login successful!';
                 messageElem.style.color = 'green';
-                window.location.pathname = '/public/index.html'
+                window.location.pathname = '/index.html'
 
                 localStorage.setItem('userId', result._id);
                 const firstLetter = result.name.charAt(0).toUpperCase();
