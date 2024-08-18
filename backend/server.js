@@ -20,6 +20,7 @@ const PORT = process.env.PORT || 3000;
 const MongoDB_url = process.env.MONGODB_URL;
 
 
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -32,19 +33,32 @@ const storage = multer.diskStorage({
     }
 });
 
+const corsOptions = {
+    origin: 'https://fullstack-project-8whr.vercel.app/',
+    credentials: true,
+};
+
+
 const upload = multer({ storage: storage });
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'uploads')));
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
+
+
+
+
+
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api/auth', AuthRoute);
 app.use('/api/category', CategoryRoute);
 app.use('/api/products', ProductRoute);
 app.use('/api/wishlist', WishlistRouter);
+
+
 
 const httpServer = createServer(app);
 
