@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     async function fetchCategories() {
         try {
-            const response = await fetch('http://localhost:7777/api/category/categories');
+            const response = await fetch('https://fullstack-project-8whr.vercel.app/api/category/categories');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!categoryName) return;
 
         try {
-            const response = await fetch('http://localhost:7777/api/category/categories', {
+            const response = await fetch('https://fullstack-project-8whr.vercel.app/api/category/categories', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!newCategoryName) return;
 
         try {
-            const response = await fetch(`http://localhost:7777/api/category/categories/${id}`, {
+            const response = await fetch(`https://fullstack-project-8whr.vercel.app/api/category/categories/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!confirm('Are you sure you want to delete this category?')) return;
 
         try {
-            const response = await fetch(`http://localhost:7777/api/category/categories/${id}`, {
+            const response = await fetch(`https://fullstack-project-8whr.vercel.app/api/category/categories/${id}`, {
                 method: 'DELETE'
             });
 

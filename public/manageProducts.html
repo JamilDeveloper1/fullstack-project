@@ -265,7 +265,7 @@
 
         async function fetchProducts() {
             try {
-                const response = await fetch('http://localhost:7777/api/products');
+                const response = await fetch('https://fullstack-project-8whr.vercel.app/api/products');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -278,7 +278,7 @@
                     const categoryName = product.category ? product.category.categoryName : 'No Category';
                     const difficulty = ['Easy', 'Medium', 'Hardest'][product.moeilijkheid - 1];
                     productElement.innerHTML = `
-                    <img src="http://localhost:7777/${product.mainPicture}" alt="Main Picture">
+                    <img src="https://fullstack-project-8whr.vercel.app/${product.mainPicture}" alt="Main Picture">
                     <div class="product-info">
                         <h3>${product.name}</h3>
                         <p><strong>Category:</strong> ${categoryName}</p>
@@ -288,7 +288,7 @@
                         <p><strong>Introduction:</strong> ${product.inleid}</p>
                         <p><strong>Ranking:</strong> ${product.ranking}</p>
                         <div class="additional-pictures">
-                            ${product.additionalPictures.map(picture => `<img src="http://localhost:7777/${picture}" alt="Additional Picture">`).join('')}
+                            ${product.additionalPictures.map(picture => `<img src="https://fullstack-project-8whr.vercel.app/${picture}" alt="Additional Picture">`).join('')}
                         </div>
                         <div class="product-buttons">
                             <button class="edit-product" data-id="${product._id}">Edit</button>
@@ -312,7 +312,7 @@
 
                 const formData = new FormData(productForm);
                 const method = editingProductId ? 'PUT' : 'POST';
-                const endpoint = editingProductId ? `http://localhost:7777/api/products/${editingProductId}` : 'http://localhost:7777/api/products';
+                const endpoint = editingProductId ? `https://fullstack-project-8whr.vercel.app/api/products/${editingProductId}` : 'https://fullstack-project-8whr.vercel.app/api/products';
                 const response = await fetch(endpoint, {
                     method,
                     body: formData
@@ -333,7 +333,7 @@
             document.querySelector('.product-side').addEventListener('click', async (event) => {
                 if (event.target.classList.contains('edit-product')) {
                     const productId = event.target.dataset.id;
-                    const response = await fetch(`http://localhost:7777/api/products/${productId}`);
+                    const response = await fetch(`https://fullstack-project-8whr.vercel.app/api/products/${productId}`);
                     const product = await response.json();
                     window.scrollTo(0, 0);
 
@@ -348,7 +348,7 @@
                     editingProductId = productId;
                 } else if (event.target.classList.contains('delete-product')) {
                     const productId = event.target.dataset.id;
-                    await fetch(`http://localhost:7777/api/products/${productId}`, {
+                    await fetch(`https://fullstack-project-8whr.vercel.app/api/products/${productId}`, {
                         method: 'DELETE'
                     });
                     fetchProducts();
@@ -360,7 +360,7 @@
 
         async function fetchCategories() {
             try {
-                const response = await fetch('http://localhost:7777/api/category/categories');
+                const response = await fetch('https://fullstack-project-8whr.vercel.app/api/category/categories');
                 const categories = await response.json();
                 const categorySelect = document.getElementById('category');
                 categories.forEach(category => {

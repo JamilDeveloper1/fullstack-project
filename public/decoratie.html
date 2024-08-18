@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     async function fetchProducts() {
         try {
-            const response = await fetch('http://localhost:7777/api/products');
+            const response = await fetch('https://fullstack-project-8whr.vercel.app/api/products');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const categoryName = product.category ? product.category.categoryName : 'No Category';
             return `
                 <div class="product_item" onclick="openProductDetails('${product._id}')">
-                    <img src="http://localhost:7777/${product.mainPicture}" alt="${product.name}"
+                    <img src="https://fullstack-project-8whr.vercel.app/${product.mainPicture}" alt="${product.name}"
                     <p>${product.name}</p>
                     <p>${categoryName}</p>
                     <p><span class="stars">${renderStars(product.ranking)}</span></p>

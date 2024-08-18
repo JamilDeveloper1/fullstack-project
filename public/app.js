@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const messageElem = document.getElementById('message');
 
         try {
-            const response = await fetch('http://localhost:7777/api/auth/signup', {
+            const response = await fetch('https://fullstack-project-8whr.vercel.app/api/auth/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, password })
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const messageElem = document.getElementById('loginMessage');
 
         try {
-            const response = await fetch('http://localhost:7777/api/auth/login', {
+            const response = await fetch('https://fullstack-project-8whr.vercel.app/api/auth/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, password })
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const userId = localStorage.getItem('userId');
         if (userId) {
             try {
-                const response = await fetch(`http://localhost:7777/api/auth/${userId}`, {
+                const response = await fetch(`https://fullstack-project-8whr.vercel.app/api/auth/${userId}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ userId })
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
             logOutBtns.forEach((btn) => {
                 btn.addEventListener("click", async () => {
                     try {
-                        const logoutResponse = await fetch('http://localhost:7777/api/auth/logout', {
+                        const logoutResponse = await fetch('https://fullstack-project-8whr.vercel.app/api/auth/logout', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' }
                         });

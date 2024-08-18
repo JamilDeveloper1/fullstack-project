@@ -160,7 +160,7 @@
             const wishlistContainer = document.getElementById('wishlist-container').querySelector('tbody');
 
             // Fetch wishlist items
-            fetch(`http://localhost:7777/api/wishlist/${userId}`)
+            fetch(`https://fullstack-project-8whr.vercel.app/api/wishlist/${userId}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -180,7 +180,7 @@
                         `<tr data-id="${item._id}">
                             <td>
                                 <div class="wishlist-item">
-                                    <img src="http://localhost:7777/${item.mainPicture}" alt="${item.name}">
+                                    <img src="https://fullstack-project-8whr.vercel.app/${item.mainPicture}" alt="${item.name}">
                                     <div>
                                         <a href='productDetails.html?id=${item._id}'>${item.name}</a>
                                         <p>Prijs: ${item.kosten}€</p>
@@ -205,7 +205,7 @@
                     const wishlistItem = event.target.closest('tr');
                     const productId = wishlistItem.getAttribute('data-id');
 
-                    fetch(`http://localhost:7777/api/wishlist/${userId}/${productId}`, {
+                    fetch(`https://fullstack-project-8whr.vercel.app/api/wishlist/${userId}/${productId}`, {
                         method: 'DELETE',
                     })
                     .then(response => {
